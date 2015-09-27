@@ -2,6 +2,7 @@
 #include "quickSort.h"
 #include "insertionSort.h"
 #include "bubbleSort.h"
+#include "mergeSort.h"
 
 using namespace std;
 
@@ -18,6 +19,7 @@ int main(void)
     //quicksort(a, 8);
     //insertionSort(a, 8);
     //bubbleSort(a, 8);
+    //merge(a,0,7);
     
     for(i = 0;i < 8;i++)
         cout<<a[i]<<" ";
