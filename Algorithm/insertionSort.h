@@ -1,13 +1,8 @@
-//
-//  insertionSort.h
-//  ChaunceysLibrary
-//
-//  Created by Chauncey on 9/26/15.
-//  Copyright (c) 2015 Chauncey. All rights reserved.
-//
-
-#ifndef ChaunceysLibrary_insertionSort_h
-#define ChaunceysLibrary_insertionSort_h
+// Sorting algorithm with Data structure Array
+// Worst case performance О(n2) comparisons, swaps
+// Best case performance Ω(n) comparisons, O(1) swaps
+// Average case performance	О(n2) comparisons, swaps
+// Worst case space complexity О(n) total, O(1) auxiliary
 
 void insertionSort(int* arr,int n)
 {
@@ -24,5 +19,3 @@ void insertionSort(int* arr,int n)
         arr[j] = x;
     }
 }
-
-#endif

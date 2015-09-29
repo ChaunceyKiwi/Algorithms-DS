@@ -1,13 +1,8 @@
-//
-//  mergeSort.h
-//  deletable
-//
-//  Created by Chauncey on 9/27/15.
-//  Copyright (c) 2015 Chauncey. All rights reserved.
-//
-
-#ifndef deletable_mergeSort_h
-#define deletable_mergeSort_h
+// Sorting algorithm with Data structure Array
+// Worst case performance: O(n * log n)
+// Best case performance: O(n * log n) typical,O(n) natural variant.
+// Average case performance: O(n * log n)
+// Worst case space complexity О(n) total, O(n) auxiliary
 
 #define maxn 100
 
@@ -39,7 +34,3 @@ void merge(int a[],int l, int r) {
     for (int i = 0; i < cur; i++)
         a[i + l] = buf[i];
 }
-
-
-
-#endif

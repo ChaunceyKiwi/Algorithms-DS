@@ -1,13 +1,10 @@
-//
-//  quickSort.h
-//  deletable
-//
-//  Created by Chauncey on 9/26/15.
-//  Copyright (c) 2015 Chauncey. All rights reserved.
-//
-
-#ifndef deletable_quickSort_h
-#define deletable_quickSort_h
+// Class Sorting algorithm
+// Worst case performance  O(n^2)
+// Best case performance O(n * log n) (simple partition)
+// or O(n) (three-way partition and equal keys)
+// Average case performance    O(n log n)
+// Worst case space complexity O(n) auxiliary (naive)
+// O(log n) auxiliary (Sedgewick 1978)
 
 template <class T>
 void swap(T &a,T &b)
@@ -52,4 +49,3 @@ void quicksort(T a[],size_t size)
 }
 
 
-#endif

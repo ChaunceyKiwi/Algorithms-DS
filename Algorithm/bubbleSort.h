@@ -1,13 +1,8 @@
-//
-//  bubbleSort.h
-//  ChaunceysLibrary
-//
-//  Created by Chauncey on 9/26/15.
-//  Copyright (c) 2015 Chauncey. All rights reserved.
-//
-
-#ifndef __ChaunceysLibrary__bubbleSort__
-#define __ChaunceysLibrary__bubbleSort__
+// Sorting algorithm with Data structure Array
+// Worst case performance	O(n^2)
+// Best case performance	O(n)
+// Average case performance	O(n^2)
+// Worst case space complexity	O(1) auxiliary
 
 #include <stdio.h>
 
@@ -32,5 +27,3 @@ void bubbleSort(int* arr,int n)
         }
     }
 }
-
-#endif /* defined(__ChaunceysLibrary__bubbleSort__) */
