@@ -4,6 +4,8 @@
 // Average case performance: O(n * log n)
 // Worst case space complexity О(n) total, O(n) auxiliary
 
+//Different from insertion sort and bubble sort,the performance of merge sort is quite stable
+
 #define maxn 100
 
 void merge(int a[],int l, int r) {
