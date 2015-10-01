@@ -4,11 +4,15 @@
 // Average case performance	O(n^2)
 // Worst case space complexity	O(1) auxiliary
 
+//Chauncey:Each iteration the maxmium will be put at the rear of array
+//Some number will bubble up until meet a larger number
+
+
 #include <stdio.h>
 
 void bubbleSort(int* arr,int n)
 {
-    bool swapped = true;
+    bool swapped = true; //when array is in order now,swapped will be false and sorting terminate in advance.
     int j = 0;
     int tmp;
     while(swapped)
