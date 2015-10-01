@@ -4,6 +4,10 @@
 // Average case performance	О(n2) comparisons, swaps
 // Worst case space complexity О(n) total, O(1) auxiliary
 
+
+// divide array into two parts:sorted and unsorted.
+// Each time add the first element of unsorted array into sorted array.
+
 void insertionSort(int* arr,int n)
 {
     int i,j,x;
