@@ -6,46 +6,43 @@
 // Worst case space complexity O(n) auxiliary (naive)
 // O(log n) auxiliary (Sedgewick 1978)
 
-template <class T>
-void swap(T &a,T &b)
+void swap(int *a,int *b)
 {
-    T t = b;
-    b = a;
-    a = t;
+    int temp = *a;
+    *a = *b;
+    *b = temp;
 }
 
-template <class T>
-void quicksort(T a[],size_t l,size_t h)
+void quickSort(int* arr,int left,int right)
 {
-    if(h > l)
+    int pivot;
+    int wall = left; //wall is on the left of current index
+    int current = left;
+    
+    if (left >= right)
+        return;
+    else if (left == right - 1)
     {
-        //partition
-        int p = (int)(rand() % (h - l) + l);
-        T d = a[p];
-        //divide
-        swap(a[l],a[p]);
-        size_t i = l;
-        size_t j = i + 1;
-        while(j < h)
+        if(arr[left] > arr[right])
         {
-            while(a[j] > d&& j<h) j++;
-            if(j < h)
-            {
-                i++;
-                swap(a[i],a[j]);
-                j++;
-            }
+            swap(&arr[left],&arr[right]);
         }
-        swap(a[i],a[l]);
-        quicksort(a,l,i);
-        quicksort(a,i+1,h);
+        return;
     }
+    
+    pivot = right;
+    while(current < right)
+    {
+        if(arr[pivot] > arr[current])
+        {
+            swap(&arr[current],&arr[wall]);
+            wall++;
+        }
+        
+        current++;
+    }
+    
+    swap(&arr[wall],&arr[pivot]);
+    quickSort(arr, left, wall - 1);
+    quickSort(arr, wall + 1, right);
 }
-
-template <class T>
-void quicksort(T a[],size_t size)
-{
-    quicksort(a,0,size);
-}
-
-
