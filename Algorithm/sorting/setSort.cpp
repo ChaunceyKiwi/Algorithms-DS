@@ -1,14 +1,4 @@
-//
-//  main.cpp
-//  homework307
-//
-//  Created by Chauncey on 10/5/15.
-//  Copyright (c) 2015 Chauncey. All rights reserved.
-//
-
 #include <iostream>
-
-
 
 void setSort(int* arr,int n)
 {
@@ -35,13 +25,10 @@ void setSort(int* arr,int n)
         arr[count0 + count1 + i] = 2;
 }
 
-
-
 int main(void) {
     int a[12] = {0,0,1,0,1,2,2,1,0,2,1,2};
-    
+
     setSort(a,12);
-    
     return 0;
 }
 
