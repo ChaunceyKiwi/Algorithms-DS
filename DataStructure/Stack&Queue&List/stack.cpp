@@ -1,11 +1,3 @@
-//
-//  stack.cpp
-//  deleteLater
-//
-//  Created by Chauncey on 9/26/15.
-//  Copyright (c) 2015 Chauncey. All rights reserved.
-//
-
 #include "stack.h"
 #include <iostream>
 
@@ -51,4 +43,3 @@ double Stack::pop()
     else
         return data;
 }
-

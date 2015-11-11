@@ -15,14 +15,15 @@ class list{
         double data;
         Node *next;
     };
-    
+
     Node *head;
     int length;
-    
+
     list();
     int insertionAtHead(double data);
     double removeHead();
+    double removeTail();
     void printList();
-    
+
 };
 #endif /* defined(__deleteLater__list__) */

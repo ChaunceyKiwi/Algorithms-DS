@@ -23,7 +23,7 @@ list::list()
 int list::insertionAtHead(double data)
 {
     Node *newNode = (Node*)malloc(sizeof(Node));
-    
+
     if(newNode){
         newNode->data = data;
         newNode->next = head ;
@@ -38,7 +38,7 @@ int list::insertionAtHead(double data)
 double list::removeHead()
 {
     //checking for removing a null
-    double retVal;
+    double retVal = 0.0;
     if(head)
     {
         retVal = head->data;
@@ -48,16 +48,38 @@ double list::removeHead()
     else return -1;
 }
 
+//Remove head of list
+double list::removeTail()
+{
+    Node *currentNode;
+    currentNode = head;
+    double retVal = 0.0;
+
+    if(head == NULL)
+      return -1;
+    else{
+        while(currentNode)
+        {
+            if(currentNode->next->next == NULL)
+                break;
+            else
+                currentNode = currentNode->next;
+        }
+        retVal = currentNode->next->data;
+        currentNode->next = NULL;
+      }
+    return retVal;
+}
+
 //prints list from head to end
 void list::printList()
 {
     Node *currentNode;
     currentNode = head;
-    
+
     while(currentNode)
     {
         cout<<currentNode->data<<endl;
-        currentNode = currentNode -> next;
+        currentNode = currentNode->next;
     }
 }
-
