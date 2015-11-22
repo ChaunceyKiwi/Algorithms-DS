@@ -19,27 +19,43 @@ brackets.The final row you print the whole cost.
 
 ##Input example:
 6 9
+
 A B C D E F G
+
 A B 1
+
 A D 7
+
 B C 3
+
 B D 6
+
 B E 4
+
 C E 5
+
 C F 9
+
 D E 3
+
 E F 8
 
 ##Output example:
 (A B)
+
 (C D)
+
 (D E)
+
 (B E)
+
 (E F)
+
 19
 
 ##Method:
 Minimum Spanning Tree
+
 Kruskal's algorithm
 
 ##Reference
