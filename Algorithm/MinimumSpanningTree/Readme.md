@@ -41,3 +41,6 @@ E F 8
 ##Method:
 Minimum Spanning Tree
 Kruskal's algorithm
+
+##Reference
+The Description is translated from https://github.com/HondaDai/MinimumSpanningTree. Thanks for his work.
