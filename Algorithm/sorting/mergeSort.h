@@ -8,12 +8,19 @@
 
 #define maxn 100
 
+void swap(int *a,int *b)
+{
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
 void merge(int a[],int l, int r) {
     if (r == l)
         return;
     if (r - l == 1) {
         if (a[r] < a[l])
-            swap(a[r], a[l]);
+            swap(&a[r], &a[l]);
         return;
     }
     int m = (r + l) / 2;
@@ -31,7 +38,7 @@ void merge(int a[],int l, int r) {
         else if (a[xl] > a[xr])
             buf[cur++] = a[xr++];
         else buf[cur++] = a[xl++];
-        
+
     }
     for (int i = 0; i < cur; i++)
         a[i + l] = buf[i];
