@@ -134,6 +134,7 @@ public:
 		return paths[i];
 	}
 
+ //std::remove(paths.begin(), paths.end(),p) 
 	void remove(Path* p) {
 		paths.erase(std::remove(paths.begin(), paths.end(), p), paths.end());
 	}
