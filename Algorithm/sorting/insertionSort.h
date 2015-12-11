@@ -13,8 +13,7 @@ void insertionSort(int* arr,int n){
     for(i = 1;i < n ;i++){
         x = arr[i];
         j = i;
-        while(j > 0 && arr[j-1] > x)
-        {
+        while(j > 0 && arr[j-1] > x){
             arr[j] = arr[j-1];
             j = j-1;
         }

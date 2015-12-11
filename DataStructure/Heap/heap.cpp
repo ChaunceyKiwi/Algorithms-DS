@@ -1,18 +1,9 @@
-//
-//  heap.cpp
-//  deletable
-//
-//  Created by Chauncey on 9/26/15.
-//  Copyright (c) 2015 Chauncey. All rights reserved.
-//
-
 #include <iostream>
 #include <vector>
 #include <iterator>
 #include <algorithm>
 #include <string>
 #include <sstream>
-
 #include "heap.h"
 
 using namespace std;
@@ -61,9 +52,9 @@ int Heap::find(unsigned int idx, int val) const
     if(idx > size_) return -1; //base case:idx out of bounds
     if(val < queue_[idx]) return -1; //base case:val not in min-heap
     if(queue_[idx] == val) return idx;//found the val,return its index
-    
+
     int childIdx = child(idx), i = -1;
-    
+
     if(childIdx != -1) //find in left and right children
     {
         i = max(find(childIdx,val),find(childIdx +1, val));
@@ -75,7 +66,7 @@ void Heap::bubbleUp(int idx)
 {
     int parentIdx = parent(idx);
     if(parentIdx == -1) return;  //base case:root of heap
-    
+
     if(queue_[parentIdx] > queue_[idx])
     {
         swap(queue_[parentIdx],queue_[idx]);
@@ -93,7 +84,7 @@ void Heap::insert(int val)
 int Heap::getMinIdx(int aIdx, int bIdx, int cIdx)
 {
     bool isLeftSmaller = (queue_[aIdx] < queue_[bIdx]);
-    
+
     if(cIdx > (int)size_) //the last right child does not exist
     {
         return isLeftSmaller?aIdx:bIdx;
@@ -113,7 +104,7 @@ void Heap::bubbleDown(int idx)
     int childIdx = child(idx);
     if(childIdx == -1) return;
     int minIdx = getMinIdx(idx, childIdx, childIdx + 1);
-    
+
     if(minIdx != idx)
     {
         swap(queue_[minIdx],queue_[idx]);
@@ -125,7 +116,7 @@ void Heap::remove(int val)
 {
     int idx = find(1,val);
     if(idx == -1) return;
-    
+
     queue_[idx] = queue_[size_--];
     queue_.resize(size_ + 1);
     bubbleDown(idx);
@@ -135,7 +126,7 @@ void Heap::remove(int val)
 int Heap::extractMin()
 {
     if(isEmpty()) throw "Empty Heap!";
-    
+
     int min = queue_[1];
     remove(min);
     return min;
@@ -156,7 +147,7 @@ void Heap::makeHeap(int array[], int n)
 {
     size_ = n;
     int i = 0;
-    
+
     for(;i < n;i++)
         queue_.push_back(array[i]);
     for(int i = n;i > 0;i--)
@@ -167,12 +158,12 @@ void Heap::makeHeap(std::vector<int> &input)
 {
     size_ = (unsigned int)input.size();
     vecCiter citer = input.begin();
-    
+
     for(;citer != input.end();citer++)
     {
         queue_.push_back(*citer);
     }
-    
+
     for(int i = size_;i > 0;i--)
     {
         bubbleDown(i);
@@ -182,10 +173,10 @@ void Heap::makeHeap(std::vector<int> &input)
 string Heap::toString() const
 {
     if(isEmpty()) return "";
-    
+
     ostringstream sstream;
     copy(queue_.begin() + 1,queue_.end() - 1,ostream_iterator<int>(sstream," "));
     sstream << *(queue_.end() -1);
-    
+
     return sstream.str();
 }
