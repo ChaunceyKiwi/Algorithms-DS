@@ -8,11 +8,9 @@
 // divide array into two parts:sorted and unsorted.
 // Each time add the first element of unsorted array into sorted array.
 
-void insertionSort(int* arr,int n)
-{
+void insertionSort(int* arr,int n){
     int i,j,x;
-    for(i = 1;i < n ;i++)
-    {
+    for(i = 1;i < n ;i++){
         x = arr[i];
         j = i;
         while(j > 0 && arr[j-1] > x)
