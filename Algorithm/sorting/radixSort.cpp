@@ -1,3 +1,6 @@
+//Time complexity O(n)
+//Fast because using certain assumptions about the input values
+
 #include <iostream>
 using namespace std;
 void countingSort(int* a,int k,int length);

@@ -1,3 +1,6 @@
+//The expected running time of Bucket Sort is 𝑂(n)
+//Makes an assumption about the input distribution
+
 #include <iostream>
 #include <vector>
 using namespace std;

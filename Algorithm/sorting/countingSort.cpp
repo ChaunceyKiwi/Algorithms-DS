@@ -1,3 +1,6 @@
+//Time complexity O(n)
+//Fast because using certain assumptions about the input values
+
 #include <iostream>
 using namespace std;
 void countingSort(int* a,int k,int length);
@@ -24,14 +27,20 @@ int main(void)
 void countingSort(int* a,int k,int length){
   int i;
   int c[k],b[length];
+
+  //loop 1: need O(k)
   for(i = 0;i < k;i++)
     c[i] = 0;
+
+  //loop2: need O(n)
   for(i = 0;i < length;i++)
     c[a[i]] += 1;
 
+  //loop3: need O(k-1)
   for(i = 1;i < k;i++)
     c[i] += c[i-1];
 
+  //loop4 need O(n)
   for(i = length - 1;i > -1;i--){
     b[c[a[i]]-1] = a[i];
     c[a[i]]--;
