@@ -3,7 +3,6 @@
 int main(void){
   Point pos[10];
   Point a,b;
-  int i;
   pos[0].set_values(8.2,0.1);
   pos[1].set_values(3,4);
   pos[2].set_values(8,1);
