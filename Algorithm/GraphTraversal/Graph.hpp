@@ -1,11 +1,3 @@
-//
-//  Graph.hpp
-//  temp
-//
-//  Created by Chauncey on 2017-01-15.
-//  Copyright © 2017 Chauncey. All rights reserved.
-//
-
 #ifndef Graph_hpp
 #define Graph_hpp
 
