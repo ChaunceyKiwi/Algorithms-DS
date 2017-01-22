@@ -4,7 +4,7 @@
   * Base case: If |S| = 1, then S = {s}, and d(s) = 0. (The set only contains the start point itself and it is obvious the path to itself is staying at original place)
   * Induction case:
     * Denote P(v) as u, and suppose the caim holds for path s, ..., u, which means it is the shorest path for any points in S.
-    * Using the algorihm v is added to S. Due to the selection of the algorithm we know 
+    * Using the algorihm v is added to S. From the selection of the algorithm we know that:
         * For any points a in S:
             * min(len(s->a)) + dis(a,v) <= len(s->u) + dis(u,v).
         * For any points x in S, y not in S
