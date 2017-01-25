@@ -18,6 +18,7 @@ class Graph {
     void addEdge(int index1, int index2);
     void DFS(int index);
     void BFS(int index);
+    int countShortestPathFromTo(int indexFrom, int indexTo);
 };
 
 #endif /* Graph_hpp */

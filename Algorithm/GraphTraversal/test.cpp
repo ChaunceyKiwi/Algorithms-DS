@@ -3,19 +3,20 @@
 using namespace std;
 
 int main (void) {
-  Graph g(7);
+  Graph g(6);
   g.addEdge(0, 1);
-  g.addEdge(0, 2);
   g.addEdge(1, 2);
-  g.addEdge(2, 0);
-  g.addEdge(2, 3);
-  g.addEdge(3, 3);
+  g.addEdge(2, 5);
+  g.addEdge(0, 3);
   g.addEdge(3, 4);
-  g.addEdge(4, 6);
-  g.addEdge(3, 5);
+  g.addEdge(4, 5);
+
   cout << "Breath First Tranversal results:" << endl;
-  g.BFS(2);
+  g.BFS(0);
   cout << "Depth First Tranversal results:" << endl;
-  g.DFS(2);
+  g.DFS(0);
+  cout << "Number of shortest path from node0 to node5 is:"<< endl;
+  cout << g.countShortestPathFromTo(0, 5) << endl;
+  
   return 0;
 }
