@@ -30,27 +30,30 @@ int knapSack(int limit, int *weight, int *value, int n)
 int knapSack2(int limit, int *weight, int *value, int n)
 {
   // Initilization
-  int table[n+1][limit+1];
+  int opt[n+1][limit+1];
   for (int i = 0; i < n + 1; i++) {
     for (int j = 0; j < limit + 1; j++) {
-      table[i][j] = 0;
+      opt[i][j] = 0;
     }
   }
 
-  // Build table
+  // Build opt table
+  // opt(i, j) denote the maximial value of a selection of objects out of
+  // {1, ... i} such that the toal weight of the selection does not exceed j
+  // opt(n, W) = max{opt(n-1, W), opt(n-1, W-Wn) + Vn}
   for (int i = 1; i < n + 1; i++) {
     for (int j = 0; j < limit + 1; j++) {
       if (j - weight[i-1] < 0) {
-        table[i][j] = table[i-1][j];
+        opt[i][j] = opt[i-1][j];
       } else {
-        int caseA = table[i-1][j];
-        int caseB = table[i-1][j-weight[i-1]] + value[i-1];
-        table[i][j] = max(caseA, caseB);
+        int caseA = opt[i-1][j];
+        int caseB = opt[i-1][j-weight[i-1]] + value[i-1];
+        opt[i][j] = max(caseA, caseB);
       }
     }
   }
 
-  return table[n][limit];
+  return opt[n][limit];
 }
 
 int main()
