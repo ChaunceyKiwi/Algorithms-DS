@@ -13,11 +13,7 @@ int Graph::calculate_shortest_path_from_to(int source, int target) {
   for (int i = 0; i < n; i++) {
     opt[0][i] = INT_MAX;
   }
-  
-  // since t is the target, no arcs and no weight is need to get to itself
-  for (int i = 0; i < n; i++) {
-    opt[i][target] = 0;
-  }
+  opt[0][target] = 0;
   
   for (int i = 1; i < n; i++) {
     for (int v = 0; v < n; v++) {
