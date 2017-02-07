@@ -1,10 +1,10 @@
-# Ds_Algorithm
-Data Structure &amp; Algorithm
+# Algorithms - DS
+Algorithm - Data Structures
 
-I will add both data sturcture and algorithm here.
+	* Both data structure and algorithm will be added here.
 
-Every things added here should be comprehended quite well.
+	* Every things added here is recommended strongly attched with specific description or analysis.
 
-Yeah!~
+# Log
 
-Nov 8th Using Source Tree To Update.
+	* #20170206: Current mainly focus on the implementation of basic algorithms.
