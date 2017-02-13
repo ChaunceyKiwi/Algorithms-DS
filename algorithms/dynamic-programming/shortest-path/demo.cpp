@@ -11,9 +11,7 @@ int main (void) {
   g.addEdge(3, 4, 7);
   g.addEdge(4, 6, 8);
   g.addEdge(3, 5, 9);
-  g.calculate_shortest_path_from(0);
-  cout << endl;
-  cout << g.calculate_shortest_path_from_to(0, 6) << endl;
-  cout << g.calculate_shortest_path_from_to2(0, 6) << endl;
+  g.calculate_shortest_path_from_to(0, 6);
+  g.calculate_shortest_path_from_to2(0, 6);
   return 0;
 }

@@ -17,9 +17,8 @@ class Graph {
   public:
     Graph(int verticesCount);
     void addEdge(int index1, int index2, float cost);
-    void calculate_shortest_path_from(int index);
-    int calculate_shortest_path_from_to(int source, int target);
-    int calculate_shortest_path_from_to2(int source, int target);
+    void calculate_shortest_path_from_to(int source, int target);
+    void calculate_shortest_path_from_to2(int source, int target);
 };
 
 #endif /* Graph_hpp */
