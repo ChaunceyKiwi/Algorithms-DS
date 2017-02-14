@@ -4,12 +4,12 @@
 int NetworkFlow::fordFulkerson() {
   NetworkFlow rNetworkFlow = NetworkFlow(*this);
   int max_flow = 0;
-  
+
   while(rNetworkFlow.updateFlow()) {
-    rNetworkFlow.argumentFlow();
+    rNetworkFlow.augmentFlow();
     max_flow += rNetworkFlow.bottleneckOfFlow;
   }
-  
+
   return max_flow;
 }
 
@@ -21,7 +21,7 @@ void NetworkFlow::updateBottleneckOfFlow() {
   this->bottleneckOfFlow = bottleneck;
 }
 
-void NetworkFlow::argumentFlow() {
+void NetworkFlow::augmentFlow() {
   this->updateBottleneckOfFlow();
 
   for (int i = this->sink; i != this->source; i = this->flow[i]) {
@@ -37,7 +37,7 @@ bool NetworkFlow::updateFlow() {
     discovered[i] = false;
   }
   discovered[this->source] = true;
-  
+
   queue<int> myqueue;
   myqueue.push(source);
   while(!myqueue.empty()) {

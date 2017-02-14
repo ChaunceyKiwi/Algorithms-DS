@@ -20,11 +20,10 @@ NetworkFlow::NetworkFlow(const NetworkFlow& other) {
   this->source = other.source;
   this->sink = other.sink;
   this->bottleneckOfFlow = 0;
-  
+
   for (int i = 0; i < verticesCount; i++) {
     for (int j = 0; j < verticesCount; j++) {
       this->adjacencyMatrix[i][j] = other.adjacencyMatrix[i][j];
     }
   }
 }
-

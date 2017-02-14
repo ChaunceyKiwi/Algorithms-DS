@@ -19,11 +19,9 @@ public:
   NetworkFlow(int verticesCount, int source, int sink);
   NetworkFlow (const NetworkFlow& other);
   void addEdge(int index1, int index2, int cost);
-
   int getVerticesCount() {return verticesCount;}
-  
   int fordFulkerson();
   bool updateFlow();
   void updateBottleneckOfFlow();
-  void argumentFlow();
+  void augmentFlow();
 };
