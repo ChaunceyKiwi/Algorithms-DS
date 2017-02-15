@@ -34,7 +34,7 @@ float calculateOptimal(string x, string y) {
       opt[i][j] = min(min(case1, case2), case3);
     }
   }
-  return opt[m-1][n-1];
+  return opt[m][n];
 }
 
 // Time complexity: O(m*n)
