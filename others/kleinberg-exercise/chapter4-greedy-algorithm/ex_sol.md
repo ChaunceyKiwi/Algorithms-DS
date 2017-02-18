@@ -8,4 +8,7 @@
 
 #### Answer
 
+### Solved Exercise3
+
+#### Answer
 
