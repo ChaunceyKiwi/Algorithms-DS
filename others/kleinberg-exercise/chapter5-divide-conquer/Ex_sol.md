@@ -2,10 +2,40 @@
 
 ### Solved Exercise1
 
+Find the “peak entry” p without having to read the entire array—in fact, by reading as few entries of A as possible. Show how to find the entry p by reading at most O(log n) entries of A.
+
 #### Answer
+If len = 2, return the index of the one with larger value. Else: 
+
+1. If A[n/2] > A[n/2 - 1], find peak in A[n/2 + 1, n]
+2. If A[n/2] < A[n/2 - 1], find peak in A[1, n/2]
 
 ### Solved Exercise2
+Show how to find the correct numbers i and j in time O(n log n).
 
 #### Answer
+##### Version 1 with divide and conquer:
+
+1. Buy and sell in the first n/2 days.
+2. Buy and sell in the last n/2 days.
+3. Buy in the first n/2 days and sell in the last n/2 days. (Find maximum and minimum)
+
+Time complexity analysis: T(n) = 2 * T(n/2) + O(n), thus the time complexity is O(n * logn).
+
+##### Version2:
+Actually in this problem we try to get the difference between the maximum value and minimum value, and the maximum value should have a index larger than the minimum value.
+
+Thus we can store the minimum number in a varible, whenever we meet with a number less than the minimum number, we update it. We can guarantee the minimum number is in the front of the maxmimum number because it is updated before metting with the maximum number. 
+
+    for (int i = 0; i < len; i++){
+        if (prices[i] < min_price)
+            min_price = prices[i];
+        else if(prices[i] - min_price > maxProfit)
+            maxProfit = prices[i] - min_price;
+    }
+
+Time complexity analysis: it needs n iterations with each iteration consuming constant time. Thus the time complexity is O(n).
+
+
 
 
