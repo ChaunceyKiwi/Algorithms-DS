@@ -5,10 +5,13 @@
 Find the “peak entry” p without having to read the entire array—in fact, by reading as few entries of A as possible. Show how to find the entry p by reading at most O(log n) entries of A.
 
 #### Answer
-If len = 2, return the index of the one with larger value. Else: 
+If len <= 3, return the index of the one with the largest value. 
+Otherwise do as following: 
 
-1. If A[n/2] > A[n/2 - 1], find peak in A[n/2 + 1, n]
-2. If A[n/2] < A[n/2 - 1], find peak in A[1, n/2]
+1. If A[n / 2 - 1] < A[n / 2] < A[n / 2 + 1], find peak in 
+A[n / 2 + 1, n]
+2. If A[n / 2 + 1] < A[n / 2] < A[n / 2 - 1], find peak in 
+A[1, n / 2 - 1]
 
 ### Solved Exercise2
 Show how to find the correct numbers i and j in time O(n log n).
