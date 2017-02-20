@@ -19,8 +19,19 @@ From induction we know that for r <= m, ar >= or. Thus am >= om. If greedy algor
 ### Solved Exercise2
 
 #### Answer
+The order to buy license is based on the price growth rate. The higher rate it is, the earlier it should be bought.
+
+Proof: If there exist a optimal solution which is not ordered with algorithm above, there must exit a pair where the earlierly bought one has lower than price growth rate. By swapping these two, we can cut down the cost, which is contradict to it is a optimal solution. Thus the optimal solution must be obtained by algorithm described.
 
 ### Solved Exercise3
 
 #### Answer
+Skip due to not learned yet in 405
 
+### Exercise2
+a). Skip due to not learned yet in 405
+
+b). True or false? P must still be a minimum-cost s-t path for this new instance.
+
+#### Answer
+No, it is false. 3 + 4 > 8, but 3^2 + 4^2 < 8^2.
