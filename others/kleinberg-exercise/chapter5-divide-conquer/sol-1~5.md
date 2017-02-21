@@ -46,9 +46,23 @@ It takes n/2 + n/4, .... 1 to do the elimination and n-1 for final verification,
  
 
 ### Exercise4
+Help them out by designing an algorithm that computes all the forces Fj in O(n log n) time.
 
 #### Answer
+Using the convolution (lol... it is a math issue to use fast convolution which has a time complexity of O(N * logN)
 
 ### Exercise5
+Give an algorithm that takes n lines as input and in O(n log n) time returns all of the ones that are visible.
 
 #### Answer
+Firstly label the lines in order of increasing slope, and then use a divide-and-conquer approach. If n <= 3, we can easily find the visible lines in constant time. The first and the third will always be visible and the second will be visable. The second will be visible if and only if it meets the first line to the left of where the third line meets the first line.
+
+Let m = ceiling(n/2), we first recursively compute the sequence of visible lines among L1, ..., Lm, say they are {Li1, Li2, ... Lip} in order of increasing slope. And we also compute the sequence of intersection points a1, a2... a(p-1), where ak is the intersection of line Lik and Li(k+1). We can derive that a1, a2, ... a(p-1) will have increasing x-coordinates. And we do the same things for the line remains.
+
+To merge L and L', we know the Li1 and Ljq is visible becasue they have minimum and maximum slope.
+
+We merge the sorted list a1, ..., a(p-1) and b1, ..., b(q-1) into a single list of points c1,c2,c..c(p+q-2), ordered by increasing x-coordinate. Now for each k we consider which line is uppermost at ck in L and L'.
+
+The sequence of visible lines is Li1, ... Lis, Ljt,..., Ljq.
+
+**To be consider in detail in the future**
