@@ -1,6 +1,6 @@
 # To-do-list for Kleinberg Exercise
 
-## Why
+## Why make a list
 It might not be realistic to finish all problems in Kleinberg exercises. And some topics are skipped in the class of CMPT405. I do not mean that the topic uncovered is meaningless. On the contrary, some topics uncovered is quite important like minimum spanning tree. However, due to the limitation on time and energy, I choose to focus on the topic which has been discussed in class so that the exercise can act as a strengthened training. I hope if I have enough time in the future I can make up the part I have skipped.
 
 ## To-do list

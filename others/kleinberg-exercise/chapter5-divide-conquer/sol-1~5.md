@@ -63,6 +63,6 @@ To merge L and L', we know the Li1 and Ljq is visible becasue they have minimum 
 
 We merge the sorted list a1, ..., a(p-1) and b1, ..., b(q-1) into a single list of points c1,c2,c..c(p+q-2), ordered by increasing x-coordinate. Now for each k we consider which line is uppermost at ck in L and L'.
 
-The sequence of visible lines is Li1, ... Lis, Ljt,..., Ljq.
+The sequence of visible lines is Li1, ... Lis, Ljt,..., Ljq. (Some lines in the middle position might be unvisible).
 
 **To be consider in detail in the future**
