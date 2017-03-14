@@ -34,3 +34,13 @@ Thus there do not exist such a function H(P) to tell if a problem will halt even
 
 ## Discussion
 There are some similar paradox like `Barber paradox` and `omnipotence paradox`.
+
+### Barber paradox
+	A = {a | a lives in the town}
+	S_a = {x | a shaves x}
+	
+The barber s is the "one who shaves all those, and those only, who do not shave themselves." 
+	
+	S_s = {a | a not in S_a}
+
+If s is not in S_s, it is in S_s. If s is in S_s, it is not in S_s, lol. 
