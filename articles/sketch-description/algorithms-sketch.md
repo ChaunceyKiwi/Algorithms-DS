@@ -17,11 +17,11 @@
 * Sequence Alignment
 
 ## Network flow
-* Ford-Falkerson
+* Ford-Falkerson algorithm
 * Max flow vs Min cut
 * Matchings
 * Disjoint Paths
-* DEmands and Bounds
+* Demands and Bounds
 * Airline Scheduling
 
 ## Linear programming
