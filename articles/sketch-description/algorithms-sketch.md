@@ -23,6 +23,7 @@
 * Disjoint Paths
 * Demands and Bounds
 * Airline Scheduling
+* Image Segmentation Problem
 
 ## Linear programming
 * Duality
