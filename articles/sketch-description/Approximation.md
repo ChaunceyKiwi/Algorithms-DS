@@ -24,12 +24,16 @@
 	* Since it is unlikely that there can ever be efficient polynomial time algorithms to solve NP-hard problems, approximation algorithms are often used to solve this kind of problem.
 
 * Loading Balancing
+	* Load: the total time needs for a machine to finsh job assigned
+	* Makespan: the maximal load on any machine
 	* Greedy algorithm
 		* Assign job to machine whose load is smallest so far
 		* A 2-approximation algorithm
-	* Longest Processing Time
+			* Key idea: L\_i - t\_j <= L\*, t\_j <= L\*
+	* (LPT) Longest Processing Time
 		* Sort n jobs in descending order of processing time, and then run list scheduling algorithm
 		* A 1.5-approximation algorithm
+			* Key idea: t\_j <= L\*/2
 
 * Center Selection Problem
 	* Select k centers C so that maximum distance from a site to the nearest center is minimized.
