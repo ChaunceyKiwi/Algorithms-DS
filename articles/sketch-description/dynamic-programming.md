@@ -29,4 +29,5 @@ The next time the same subproblem occurs, instead of recomputing its solution, o
 * Sequence Alignment
 	* Let OPT(i, j) denote the minimum cost of an alignment between x\_1, x\_2, x\_3, ..., x\_i and y\_1, y\_2, y\_3, ..., y\_j.
 	* OPT(i, j) = min { OPT(i-1, j-1) + alpha_{x\_i, j\_i}, OPT(i-1, j) + delta, OPT(i, j-1) + delta }
+	* Time complexity: We fill up an m by n table and spend constant time on each entry. Thus the time complexity is O(mn).
 	
