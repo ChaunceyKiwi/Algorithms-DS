@@ -36,8 +36,10 @@
 			* Key idea: t\_j <= L\*/2
 
 * Center Selection Problem
-	* Select k centers C so that maximum distance from a site to the nearest center is minimized.
-	* Greedy algorithm is a 2-approximation algorithm for center selection problem.
+	* Select k centers C so that maximum distance from a site to the nearest center is minimized
+	* Greedy algorithm is a 2-approximation algorithm for center selection problem
+		* Repeatly choose the next center to be the site farthest form any existing center
+		* Unless P = NP, there is no approximation algorithm with rho less than 2 
 
 * Pricing Method
 	* Pricing method is a 2-approximation algorithm
