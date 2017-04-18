@@ -28,10 +28,12 @@
 * Ford-Falkerson algorithm
 	* A greedy algorithm that computes the maximum flow in a flow network
 	* Running time O(mC) where C is the total capacity of arcs leaving s
+	* Fatser Ford-Falkerson algorithm: try to augument path with a lower bound on bottleneck
 
 * Max flow vs Min cut
 
 * Matchings
+	* A matching is a set of edges such that every vertex is incident to at most one edge from M 
 	* Objective: find a matching in G of maximal size
 	* Algorithms:
 		* Orient all edges from X to Y
@@ -63,9 +65,28 @@
 		* Demand condition
 	* The idea is to add new source and sink
 	* Lower Bounds
-		* For the problem with lower bound, we can eliminate it by some translation.  
-
+		* For the problem with lower bound, we can eliminate it by some translation.
 
 * Airline Scheduling
+	* For each flight i, the lower bound is 1 and capacity is 1
+	* For each flight i and flight j such that flight j is reachable frmo the flight i, the lower bound for (v\_i, u\_j) is 0 and capacity is 1.
+	* Connect the source to each flight with (t, u\_i) with lower bound as 0 and capacity as 1.
+	* Connect each flight to the sink with (v\_i, t) with lower bound as 0 and capacity as 1.
+	* There is an arc(v_i, t) with a lower bound 0 and a capacity k so that we can put redundant planes here
+	* The node s has demand -k, and node t has demand k
 
 * Image Segmentation Problem
+	* We construct an undirected graph G = (V, E) where V is the set of pixels and E is the neighborhood relation.
+	* For every pixel i there are associated likelihood a\_i that it belongs to the foreground and likelihood b_i that it belongs to the background.
+	* It is regulated by a separation penalty p_ij >= 0 for one of i andj in the foreground and the other in the background
+	* Method to solve difficulties:
+		* Need to maximize, rather than minimize
+			* Convert maximize function to minimize function 
+		* No source and sink
+			* Add an external source s and sink t 
+		* Have to deal with values assigned to vertices
+			* Assign capacity a\_i to edges (s, i)
+			* Assign capacity b\_i to edges (i, t) 
+		* The graph is undirected 
+			* Replace each undirected edge with two directed arcs and assign capacity p_ij to both
+	* In this way, a cut (A union {s}, B union {t}) corresponds to partition (A, B) of the original graph. The cut value c(A, B) is equal to cost function  
