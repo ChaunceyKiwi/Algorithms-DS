@@ -12,9 +12,10 @@
 #include <stdio.h>
 void bubbleSort(int* arr,int n)
 {
-  bool swapped = true; //when array is in order now,swapped will be false and sorting terminate in advance.
+  bool swapped = true; /* used to terminate sorting in advance */
   int j = 0;
   int tmp;
+  
   while (swapped) {
     swapped = false;
     j++;
