@@ -6,26 +6,19 @@
  * Worst case space complexity  O(1) auxiliary
  */
 
-/* Each iteration the maxmium will be put at the rear of array */
+/* In each iteration the maxmium will be put at the rear of array */
 /* Some number will bubble up until meet a larger number */
 
-#include <stdio.h>
-void bubbleSort(int* arr,int n)
-{
-  bool swapped = true; /* used to terminate sorting in advance */
-  int j = 0;
-  int tmp;
+#include <iostream>
+#include <vector>
+
+void bubbleSort(vector<int> &nums) {
+  int len = (int)nums.size();
   
-  while (swapped) {
-    swapped = false;
-    j++;
-    
-    for (int i = 0;i < n - j;i++) {
-      if (arr[i] > arr[i+1]) {
-        tmp = arr[i];
-        arr[i] = arr[i+1];
-        arr[i+1] = tmp;
-        swapped = true;
+  for (int i = 0; i < len; i++) {
+    for (int j = 0; j < len - i - 1; j++) {
+      if (nums[j] > nums[j+1]) {
+        swap(nums[j], nums[j+1]);
       }
     }
   }
