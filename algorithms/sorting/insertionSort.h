@@ -8,15 +8,18 @@
 // divide array into two parts:sorted and unsorted.
 // Each time add the first element of unsorted array into sorted array.
 
-void insertionSort(int* arr,int n){
-    int i,j,x;
-    for(i = 1;i < n ;i++){
-        x = arr[i];
-        j = i;
-        while(j > 0 && arr[j-1] > x){
-            arr[j] = arr[j-1];
-            j = j-1;
-        }
-        arr[j] = x;
+void insertionSort(vector<int> &nums) {
+  int len = (int)nums.size();
+  
+  for (int i = 1; i < len ; i++) {
+    int j = i - 1;
+    int temp = nums[i];
+    
+    while (j >= 0 && nums[j] > temp) {
+      nums[j+1] = nums[j];
+      j--;
     }
+    
+    nums[j+1] = temp;
+  }
 }
