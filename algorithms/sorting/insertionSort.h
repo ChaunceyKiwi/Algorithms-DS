@@ -1,11 +1,11 @@
 // Sorting algorithm with Data structure Array
-// Worst case performance О(n2) comparisons, swaps
+// Worst case performance О(n^2) comparisons, swaps
 // Best case performance Ω(n) comparisons, O(1) swaps
-// Average case performance	О(n2) comparisons, swaps
+// Average case performance	О(n^2) comparisons, swaps
 // Worst case space complexity О(n) total, O(1) auxiliary
 
 
-// divide array into two parts:sorted and unsorted.
+// divide array into two parts: sorted part and unsorted part.
 // Each time add the first element of unsorted array into sorted array.
 
 void insertionSort(vector<int> &nums) {
