@@ -57,6 +57,11 @@ class QuickUnion {
   void unite(int p, int q) {
     int i = root(p);
     int j = root(q);
+    
+    if (i == j) {
+      return;
+    }
+   
     if (size[i] < size[j]) {
       id[i] = j;
       size[j] += size[i];
