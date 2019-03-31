@@ -6,36 +6,27 @@
 // Average case performance    O(n log n)
 // Worst case space complexity O(n) auxiliary (naive)
 // O(log n) auxiliary (Sedgewick 1978)
-void swap(int *a,int *b){
-    int temp = *a;
-    *a = *b;
-    *b = temp;
-}
-
-void quickSort(int* arr,int left,int right){
-    int pivot;
-    int wall = left; //wall is on the left of current index
-    int current = left;
-
-    if (left >= right)
-        return;
-    else if (left == right - 1){
-        if(arr[left] > arr[right])
-        {
-            swap(&arr[left],&arr[right]);
-        }
-        return;
+void quickSort(vector<int>& nums, int L, int R) {
+  if (L >= R) {
+    return;
+  }
+  
+  int pivot = L + rand() % (R - L + 1);
+  
+  /* put pivot at the end */
+  swap(nums[pivot], nums[R]);
+  
+  int wall = L;
+  for (int i = L; i < R; i++) {
+    if (nums[i] < nums[R]) {
+      swap(nums[i], nums[wall]);
+      wall++;
     }
-
-    pivot = right;
-    while(current < right){
-        if(arr[pivot] > arr[current]){
-            swap(&arr[current],&arr[wall]);
-            wall++;
-        }
-        current++;
-    }
-    swap(&arr[wall],&arr[pivot]);
-    quickSort(arr, left, wall - 1);
-    quickSort(arr, wall + 1, right);
+  }
+  
+  /* put pivot back to correct position */
+  swap(nums[wall], nums[R]);
+  
+  quickSort(nums, L, wall - 1);
+  quickSort(nums, wall + 1, R);
 }
